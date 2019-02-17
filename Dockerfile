@@ -1,0 +1,55 @@
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM opensuse/leap:15.0
+
+ENV LANG   "en_US.UTF8"
+ENV LC_ALL "en_US.UTF8"
+ENV SHELL  "/bin/bash"
+ENV TZ     "UTC"
+
+VOLUME  "/root"
+WORKDIR "/root"
+
+EXPOSE 22
+
+ENTRYPOINT [ "dumb-init", "--" ]
+CMD        [ "docker-entrypoint.sh" ]
+
+# Prepare Zypper dependencies
+RUN set -ex \
+    && zypper -n --gpg-auto-import-keys refresh \
+    && zypper -n install -y ca-certificates ca-certificates-cacert ca-certificates-mozilla curl gcc git libffi-devel libopenssl-devel make python python-devel python-xml sudo \
+    && zypper clean --all
+
+# Install PIP
+RUN set -ex \
+    && curl -skL https://bootstrap.pypa.io/get-pip.py | python
+
+# Install PIP dependencies
+RUN set -ex \
+    && pip install ansible ansible-lint yamllint \
+    && rm -rf /root/.cache/pip
+
+# Copy files
+COPY files /
+
+# Bootstrap with Ansible
+RUN set -ex \
+    && ansible-galaxy install --force --roles-path /etc/ansible/roles --role-file /etc/ansible/ansible-role-requirements.yml \
+    && yamllint --config-file /etc/ansible/.yamllint /etc/ansible \
+    && ansible-lint /etc/ansible/playbooks/bootstrap.yml \
+    && ansible-playbook /etc/ansible/playbooks/bootstrap.yml --syntax-check \
+    && ansible-playbook /etc/ansible/playbooks/bootstrap.yml --diff \
+    && ansible-playbook /etc/ansible/playbooks/bootstrap.yml --diff
