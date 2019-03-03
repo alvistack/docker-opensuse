@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Remove openSUSE 42.3 support
+
 ## 15.0-0alvistack1 - 2019-02-17
 
   - openSUSE Leap 15.0/42.3 based
