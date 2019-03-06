@@ -30,7 +30,7 @@ CMD        [ "docker-entrypoint.sh" ]
 # Prepare Zypper dependencies
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
-    && zypper -n install -y ca-certificates ca-certificates-cacert ca-certificates-mozilla curl gcc git libffi-devel libopenssl-devel make python python-devel python-xml sudo \
+    && zypper -n install -y ca-certificates ca-certificates-cacert ca-certificates-mozilla curl gcc libffi-devel libopenssl-devel make python python-devel python-xml sudo \
     && zypper clean --all
 
 # Install PIP
