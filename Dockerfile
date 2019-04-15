@@ -49,6 +49,6 @@ COPY files /
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
     && molecule test \
+    && zypper clean --all \
     && rm -rf /root/.cache/* \
-    && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*
