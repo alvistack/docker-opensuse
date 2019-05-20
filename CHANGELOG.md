@@ -4,6 +4,13 @@
 
 ### Major Changes
 
+## 15.0-0alvistack6 - 2019-05-20
+
+### Major Changes
+
+  - Bugfix "Build times out because no output was received"
+  - Upgrade minimal Ansible support to 2.8.0
+
 ## 15.0-0alvistack5 - 2019-04-15
 
 ### Major Changes
