@@ -27,6 +27,9 @@ EXPOSE 22
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "docker-entrypoint.sh" ]
 
+# Hotfix for CVE-2019-5021
+RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
+
 # Prepare Zypper dependencies
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
