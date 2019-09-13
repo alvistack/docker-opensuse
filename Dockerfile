@@ -24,8 +24,8 @@ WORKDIR "/root"
 
 EXPOSE 22
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "sshd", "-eD" ]
 
 # Hotfix for CVE-2019-5021
 RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
