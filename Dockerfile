@@ -47,7 +47,11 @@ COPY files /
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
     && pip install --upgrade --requirement requirements.txt \
-    && molecule test \
+    && molecule dependency \
+    && molecule lint \
+    && molecule syntax \
+    && molecule converge \
+    && molecule verify \
     && zypper clean --all \
     && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
