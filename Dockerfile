@@ -33,12 +33,12 @@ RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
 # Prepare Zypper dependencies
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
-    && zypper -n install -y ca-certificates ca-certificates-cacert ca-certificates-mozilla curl gcc git libffi-devel libopenssl-devel make python python-devel python-xml sudo \
+    && zypper -n install -y ca-certificates* curl gcc git libffi-devel libopenssl-devel make python3 python3-devel python3-xml sudo \
     && zypper clean --all
 
 # Install PIP
 RUN set -ex \
-    && curl -skL https://bootstrap.pypa.io/get-pip.py | python
+    && curl -skL https://bootstrap.pypa.io/get-pip.py | python3
 
 # Copy files
 COPY files /
@@ -46,7 +46,7 @@ COPY files /
 # Bootstrap with Ansible
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
-    && pip install --upgrade --requirement requirements.txt \
+    && pip3 install --upgrade --requirement requirements.txt \
     && molecule dependency \
     && molecule lint \
     && molecule syntax \
