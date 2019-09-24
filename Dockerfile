@@ -14,9 +14,6 @@
 
 FROM opensuse/leap:15.0
 
-# Hotfix for CVE-2019-5021
-RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
-
 ENV LANG   "en_US.utf8"
 ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
@@ -29,6 +26,9 @@ EXPOSE 22
 
 ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
 CMD        [ "/usr/sbin/sshd", "-eD" ]
+
+# Hotfix for CVE-2019-5021
+RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
 
 # Prepare Zypper dependencies
 RUN set -ex \
