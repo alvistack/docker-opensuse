@@ -14,8 +14,8 @@
 
 FROM opensuse/leap:15.0
 
-ENV LANG   "en_US.UTF8"
-ENV LC_ALL "en_US.UTF8"
+ENV LANG   "C.UTF-8"
+ENV LC_ALL "C.UTF-8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
