@@ -14,8 +14,11 @@
 
 FROM opensuse/leap:15.0
 
-ENV LANG   "C.UTF-8"
-ENV LC_ALL "C.UTF-8"
+# Hotfix for CVE-2019-5021
+RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
+
+ENV LANG   "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
@@ -26,9 +29,6 @@ EXPOSE 22
 
 ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
 CMD        [ "/usr/sbin/sshd", "-eD" ]
-
-# Hotfix for CVE-2019-5021
-RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
 
 # Prepare Zypper dependencies
 RUN set -ex \
@@ -52,7 +52,7 @@ RUN set -ex \
     && molecule syntax \
     && molecule converge \
     && molecule verify \
-    && zypper clean --all \
     && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
-    && rm -rf /tmp/*
+    && rm -rf /tmp/* \
+    && zypper clean --all
