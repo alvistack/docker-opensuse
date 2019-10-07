@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM opensuse/leap:15.0
+FROM opensuse/leap:15.1
 
 ENV LANG   "en_US.utf8"
 ENV LC_ALL "en_US.utf8"

@@ -12,7 +12,7 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 ## Supported Tags and Respective `Dockerfile` Links
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/master/Dockerfile)
-  - [`15.0` (15.0/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/15.0/Dockerfile)
+  - [`15.1` (15.1/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/15.1/Dockerfile)
 
 ## Overview
 

@@ -1,6 +1,6 @@
 # Docker Image Packaging for openSUSE
 
-## 15.0-0alvistackx - TBC
+## 15.1-1alvistackx - TBC
 
 ### Major Changes
 
