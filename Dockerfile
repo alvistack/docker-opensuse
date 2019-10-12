@@ -33,7 +33,7 @@ RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
 # Prepare Zypper dependencies
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
-    && zypper -n install -y ca-certificates* curl gcc git libffi-devel libopenssl-devel make python3 python3-devel python3-xml sudo \
+    && zypper -n install -y ca-certificates* curl gcc git libffi-devel libopenssl-devel lsb-release make python3 python3-devel python3-xml sudo \
     && zypper clean --all
 
 # Install PIP
