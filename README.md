@@ -13,7 +13,6 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/master/Dockerfile)
   - [`15.1` (15.1/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/15.1/Dockerfile)
-  - [`15.1-slim` (15.1-slim/Dockerfile)](https://github.com/alvistack/docker-opensuse/blob/15.1-slim/Dockerfile)
 
 ## Overview
 
