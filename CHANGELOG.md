@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Upgrade minimal Ansible support to 2.9.0
   - Default with Python 3
 
 ## 15.0-0alvistack7 - 2019-05-20
