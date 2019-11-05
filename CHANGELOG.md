@@ -1,11 +1,21 @@
 # Docker Image Packaging for openSUSE
 
-## 15.1-1alvistackx - TBC
+## 15.1-XalvistackY - TBC
+
+### Major Changes
+
+## 15.1-2alvistack3 - 2019-11-05
 
 ### Major Changes
 
   - Upgrade minimal Ansible support to 2.9.0
+  - Upgrade Travis CI test as Ubuntu Bionic based
   - Default with Python 3
+  - Hotfix for CVE-2019-5021
+  - Prepend executable if command starts with an option
+  - Improve `ENTRYPOINT` and `CMD`
+  - Add openSUSE 15.1 support
+  - Remove openSUSE 15.0 support
 
 ## 15.0-0alvistack7 - 2019-05-20
 
