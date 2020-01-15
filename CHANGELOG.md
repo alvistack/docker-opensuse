@@ -4,6 +4,15 @@
 
 ### Major Changes
 
+## 15.1-3alvistack1 - 2020-01-15
+
+### Major Changes
+
+  - Replace `dumb-init` with `tini`, as like as `docker --init`
+  - Replace `java` with `openjdk`
+  - Replace `nodejs` with `node`
+  - Include release specific vars and tasks
+
 ## 15.1-2alvistack3 - 2019-11-05
 
 ### Major Changes

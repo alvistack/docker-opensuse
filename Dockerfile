@@ -28,7 +28,7 @@ WORKDIR "/root"
 
 EXPOSE 22
 
-ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "/usr/sbin/sshd", "-eD" ]
 
 # Hotfix for CVE-2019-5021
@@ -37,7 +37,7 @@ RUN sed -i -e 's/^root::/root:*:/' /etc/shadow
 # Prepare Zypper dependencies
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
-    && zypper -n install -y ca-certificates* curl gcc git libffi-devel libopenssl-devel lsb-release make python3 python3-devel python3-xml sudo \
+    && zypper -n install -y ca-certificates* curl gcc git libffi-devel libopenssl-devel lsb-release make python3 python3-devel sudo \
     && zypper clean --all
 
 # Install PIP
