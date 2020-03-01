@@ -1,3 +1,5 @@
+---
+
 # (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +14,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ansible>=2.9.0
-ansible-lint
-ansible-runner
-ansible-runner-http
-argcomplete
-docker
-molecule
-netaddr
-openshift
-python-vagrant
-yamllint
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  loop:
+    - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
+    - { dest: "/usr/local/bin/gosu", mode: "0755" }
+    - { dest: "/usr/local/bin/tini", mode: "0755" }
+
+- name: flush cache
+  shell: |
+    set -o pipefail
+    zypper clean --all
+  args:
+    executable: "/bin/bash"
+  changed_when: false
+  ignore_errors: true
