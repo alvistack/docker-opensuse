@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Consolidate molecule tests into `default` (noop)
+
 ## 15.1-4alvistack1 - 2020-03-04
 
 ### Major Changes
