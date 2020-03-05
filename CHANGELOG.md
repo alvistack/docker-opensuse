@@ -4,11 +4,12 @@
 
 ### Major Changes
 
-## 15.1-4alvistack1 - 2020-03-04
+## 15.1-4alvistack4 - 2020-03-05
 
 ### Major Changes
 
   - Revamp with Molecule and `docker commit`
+  - Consolidate molecule tests into `default` (noop)
   - Hotfix for systemd
   - Replace `duplicity` with `restic`
 
