@@ -4,11 +4,7 @@
 
 ### Major Changes
 
-## 15.1-4alvistack9 - 2020-04-11
-
-### Major Changes
-
-  - Provision with systemd support
+  - Rename `post_tasks.yml` as `side_effect.yml`
 
 ## 15.1-4alvistack4 - 2020-03-05
 
