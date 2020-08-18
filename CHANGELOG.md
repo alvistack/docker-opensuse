@@ -1,8 +1,12 @@
 # Docker Image Packaging for openSUSE
 
-## 15.1-XalvistackY - TBC
+## 15.2-XalvistackY - TBC
 
 ### Major Changes
+
+  - Upgrade Travis CI test as Ubuntu Focal based
+  - Upgrade minimal Ansible support to 2.10.0
+  - Support openSUSE Leap 15.2
 
 ## 15.1-4alvistack17 - 2020-06-10
 
