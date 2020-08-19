@@ -11,7 +11,7 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`15.1`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/molecule/15.1/Dockerfile.j2)
+  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/molecule/15.2/Dockerfile.j2)
 
 ## Overview
 
