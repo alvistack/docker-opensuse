@@ -4,6 +4,10 @@
 
 ### Major Changes
 
+## 15.2-4alvistack3 - 2020-08-26
+
+### Major Changes
+
   - Upgrade minimal Ansible Lint support to 4.3.2
   - Install SQLite, MariaDB and PostgreSQL with Role
   - Upgrade Travis CI test as Ubuntu Focal based
