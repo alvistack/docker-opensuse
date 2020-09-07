@@ -14,8 +14,14 @@
 
 FROM opensuse/leap:15.2
 
-ENV LANG   "en_US.utf8"
-ENV LC_ALL "en_US.utf8"
+# Hotfix for en_US.UTF-8 locale
+RUN set -ex \
+    && zypper -n --gpg-auto-import-keys refresh \
+    && zypper -n install -y glibc-i18ndata glibc-locale \
+    && zypper clean --all
+
+ENV LANG   "en_US.UTF-8"
+ENV LC_ALL "en_US.UTF-8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
@@ -23,13 +29,13 @@ ENV TZ     "UTC"
 RUN set -ex \
     && zypper -n --gpg-auto-import-keys refresh \
     && zypper -n install -y systemd systemd-sysvinit \
-    && find /usr/lib/systemd/system/sysinit.target.wants/ -name "systemd-tmpfiles-setup.service" -delete \
-    && rm -f /usr/lib/systemd/system/multi-user.target.wants/* \
     && rm -f /etc/systemd/system/*.wants/* \
-    && rm -f /usr/lib/systemd/system/local-fs.target.wants/* \
-    && rm -f /usr/lib/systemd/system/sockets.target.wants/*udev* \
-    && rm -f /usr/lib/systemd/system/sockets.target.wants/*initctl* \
     && rm -f /usr/lib/systemd/system/basic.target.wants/* \
+    && rm -f /usr/lib/systemd/system/local-fs.target.wants/* \
+    && rm -f /usr/lib/systemd/system/multi-user.target.wants/* \
+    && rm -f /usr/lib/systemd/system/sockets.target.wants/*initctl* \
+    && rm -f /usr/lib/systemd/system/sockets.target.wants/*udev* \
+    && rm -f /usr/lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup.service \
     && zypper clean --all
 
 ENV OPENJDK_RELEASE "{{ openjdk_release }}"
