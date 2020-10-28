@@ -11,7 +11,7 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/molecule/15.2/Dockerfile.j2)
+  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/packer/15.2/packer.json)
 
 ## Overview
 
@@ -19,8 +19,7 @@ This Docker container makes it easy to get an instance of SSHD up and running wi
 
 Based on [Official openSUSE Leap Docker Image](https://hub.docker.com/r/opensuse/leap/) with some minor hack:
 
-  - Minimized `Dockerfile` for meta data definition
-  - Provision by Ansible and Molecule Docker driver in single layer
+  - Packaging by Packer Docker builder and Ansible provisioner in single layer
   - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
   - Handle `CMD` with SSHD
 
