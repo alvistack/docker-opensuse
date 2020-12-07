@@ -11,7 +11,7 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/packer/15.2/packer.json)
+  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-15.2/packer.json)
 
 ## Overview
 
