@@ -1,8 +1,14 @@
 # Docker Image Packaging for openSUSE
 
-## 15.2-XalvistackY - TBC
+## YYYYMMDD.Y.Z - TBC
 
 ### Major Changes
+
+## 20201213.0.1 - 2020-12-13
+
+### Major Changes
+
+  - Change GIT tag as per Vagrant Box naming and versioning limitation
 
 ## 15.2-4alvistack13 - 2020-12-09
 
