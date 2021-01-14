@@ -1,9 +1,9 @@
 # Docker Image Packaging for openSUSE
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-opensuse/master)](https://gitlab.com/alvistack/docker-opensuse/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-opensuse/master)](https://gitlab.com/alvistack/docker-opensuse/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/opensuse.svg)](https://hub.docker.com/r/alvistack/opensuse/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/opensuse-15.2.svg)](https://hub.docker.com/r/alvistack/opensuse-15.2)
 
 openSUSE is a free and open-source operating system and Linux distribution based on Debian.
 
@@ -11,7 +11,8 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`15.2`, `latest`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-15.2/packer.json)
+  - [`alvistack/opensuse-15.2`](https://hub.docker.com/r/alvistack/opensuse-15.2)
+      - [`packer/docker-15.2/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-15.2/packer.json)
 
 ## Overview
 
@@ -58,13 +59,13 @@ Now you could SSH to it as normal:
 
 ## Versioning
 
-### `alvistack/opensuse:latest`
+### `YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-opensuse/releases) of this repository. Thus using `alvistack/opensuse:latest` or `alvistack/opensuse` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-opensuse/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/opensuse:<version>`
+### `YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-opensuse) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-opensuse/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
