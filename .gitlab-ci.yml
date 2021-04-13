@@ -92,27 +92,52 @@ default:
   before_script:
     - *script-git-submodule
 
-build:docker-15.2:
+build:docker-leap-15.2:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-docker-15.2"
+    key: "$CI_PIPELINE_ID-docker-leap-15.2"
     paths:
       - packer/*/output-docker
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
-    _PACKER_BUILDER_VERSION: "15.2"
+    _PACKER_BUILDER_VERSION: "leap-15.2"
 
-deploy:docker-15.2:
+deploy:docker-leap-15.2:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-docker-15.2"
+    key: "$CI_PIPELINE_ID-docker-leap-15.2"
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
-    _PACKER_BUILDER_VERSION: "15.2"
+    _PACKER_BUILDER_VERSION: "leap-15.2"
   needs:
-    - build:docker-15.2
+    - build:docker-leap-15.2
+
+build:docker-tumbleweed:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-docker-tumbleweed"
+    paths:
+      - packer/*/output-docker
+  variables:
+    _PACKER_BUILDER_PROVIDER: "docker"
+    _PACKER_BUILDER_VERSION: "tumbleweed"
+
+deploy:docker-tumbleweed:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-docker-tumbleweed"
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _PACKER_BUILDER_PROVIDER: "docker"
+    _PACKER_BUILDER_VERSION: "tumbleweed"
+  needs:
+    - build:docker-tumbleweed
