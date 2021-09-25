@@ -14,6 +14,7 @@
       ],
       "commit": true,
       "image": "opensuse/leap:15.3",
+      "privileged": true,
       "type": "docker"
     }
   ],
