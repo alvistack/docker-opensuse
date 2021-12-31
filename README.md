@@ -3,7 +3,7 @@
 <img src="/alvistack.svg" width="75" alt="AlviStack">
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-opensuse/master)](https://gitlab.com/alvistack/docker-opensuse/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/releases)
+[![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/opensuse-leap-15.3.svg)](https://hub.docker.com/r/alvistack/opensuse-leap-15.3)
 
@@ -17,8 +17,6 @@ Learn more about openSUSE: <https://www.opensuse.org/>
       - [`packer/docker-tumbleweed/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-tumbleweed/packer.json)
   - [`alvistack/opensuse-leap-15.3`](https://hub.docker.com/r/alvistack/opensuse-leap-15.3)
       - [`packer/docker-leap-15.3/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.3/packer.json)
-  - [`alvistack/opensuse-leap-15.2`](https://hub.docker.com/r/alvistack/opensuse-leap-15.2)
-      - [`packer/docker-leap-15.2/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.2/packer.json)
 
 ## Overview
 
@@ -67,7 +65,7 @@ Now you could SSH to it as normal:
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-opensuse/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-opensuse/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
