@@ -1,6 +1,6 @@
 # Docker Image Packaging for openSUSE
 
-<img src="/alvistack.svg" width="75" alt="AlviStack">
+<a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-opensuse/master)](https://gitlab.com/alvistack/docker-opensuse/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/tags)
