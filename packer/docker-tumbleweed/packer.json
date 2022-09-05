@@ -34,7 +34,7 @@
       "inline": [
         "set -eu",
         "zypper -n --gpg-auto-import-keys refresh",
-        "zypper -n update -y",
+        "zypper -n dist-upgrade -y --allow-vendor-change",
         "zypper -n install -y ca-certificates curl gcc glibc-i18ndata glibc-locale hostname iproute2 python3 sudo"
       ],
       "type": "shell"
