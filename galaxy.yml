@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-opensuse
+name: opensuse
 description: Docker Image Packaging for openSUSE
 
 version: 0.0.0
