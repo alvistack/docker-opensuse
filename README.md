@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-opensuse.svg)](https://g
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-opensuse.svg)](https://github.com/alvistack/docker-opensuse/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/opensuse-leap-15.4.svg)](https://hub.docker.com/r/alvistack/opensuse-leap-15.4)
+Pulls](https://img.shields.io/docker/pulls/alvistack/opensuse-leap-15.5.svg)](https://hub.docker.com/r/alvistack/opensuse-leap-15.5)
 
 openSUSE, formerly SUSE Linux, is a Linux distribution sponsored by SUSE
 Software Solutions Germany GmbH (formerly SUSE Linux GmbH) and other
@@ -27,6 +27,8 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 -   [`alvistack/opensuse-tumbleweed`](https://hub.docker.com/r/alvistack/opensuse-tumbleweed)
     -   [`packer/docker-tumbleweed/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-tumbleweed/packer.json)
+-   [`alvistack/opensuse-leap-15.5`](https://hub.docker.com/r/alvistack/opensuse-leap-15.5)
+    -   [`packer/docker-leap-15.5/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.5/packer.json)
 -   [`alvistack/opensuse-leap-15.4`](https://hub.docker.com/r/alvistack/opensuse-leap-15.4)
     -   [`packer/docker-leap-15.4/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.4/packer.json)
 
@@ -49,14 +51,14 @@ Image](https://hub.docker.com/r/opensuse/leap/) with some minor hack:
 Start SSHD:
 
     # Pull latest image
-    docker pull alvistack/opensuse-leap-15.4
+    docker pull alvistack/opensuse-leap-15.5
 
     # Run as detach
     docker run \
         -itd \
         --name opensuse \
         --publish 2222:22 \
-        alvistack/opensuse-leap-15.4
+        alvistack/opensuse-leap-15.5
 
 **Success**. SSHD is now available on port `2222`.
 
