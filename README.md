@@ -29,8 +29,6 @@ Learn more about openSUSE: <https://www.opensuse.org/>
     -   [`packer/docker-tumbleweed/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-tumbleweed/packer.json)
 -   [`alvistack/opensuse-leap-15.5`](https://hub.docker.com/r/alvistack/opensuse-leap-15.5)
     -   [`packer/docker-leap-15.5/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.5/packer.json)
--   [`alvistack/opensuse-leap-15.4`](https://hub.docker.com/r/alvistack/opensuse-leap-15.4)
-    -   [`packer/docker-leap-15.4/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.4/packer.json)
 
 ## Overview
 
