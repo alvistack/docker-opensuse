@@ -138,24 +138,24 @@ build:opensuse-tumbleweed-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-docker"
+    key: $CI_PIPELINE_ID-opensuse-tumbleweed-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "opensuse-tumbleweed"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-tumbleweed
+    _PROVIDER: docker
 
 test:opensuse-tumbleweed-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-docker"
+    key: $CI_PIPELINE_ID-opensuse-tumbleweed-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "opensuse-tumbleweed"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-tumbleweed
+    _PROVIDER: docker
   needs:
     - build:opensuse-tumbleweed-docker
 
@@ -163,13 +163,13 @@ deploy:opensuse-tumbleweed-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-docker"
+    key: $CI_PIPELINE_ID-opensuse-tumbleweed-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "opensuse-tumbleweed"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-tumbleweed
+    _PROVIDER: docker
   needs:
     - test:opensuse-tumbleweed-docker
 
@@ -177,24 +177,24 @@ build:opensuse-leap-15.5-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-leap-15.5-docker"
+    key: $CI_PIPELINE_ID-opensuse-leap-15.5-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "opensuse-leap-15.5"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-leap-15.5
+    _PROVIDER: docker
 
 test:opensuse-leap-15.5-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-leap-15.5-docker"
+    key: $CI_PIPELINE_ID-opensuse-leap-15.5-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "opensuse-leap-15.5"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-leap-15.5
+    _PROVIDER: docker
   needs:
     - build:opensuse-leap-15.5-docker
 
@@ -202,12 +202,12 @@ deploy:opensuse-leap-15.5-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-opensuse-leap-15.5-docker"
+    key: $CI_PIPELINE_ID-opensuse-leap-15.5-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "opensuse-leap-15.5"
-    _PROVIDER: "docker"
+    _IMAGE: opensuse-leap-15.5
+    _PROVIDER: docker
   needs:
     - test:opensuse-leap-15.5-docker
