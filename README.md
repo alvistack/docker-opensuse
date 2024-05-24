@@ -25,10 +25,10 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
--   [`alvistack/opensuse-tumbleweed`](https://hub.docker.com/r/alvistack/opensuse-tumbleweed)
-    -   [`packer/docker-tumbleweed/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-tumbleweed/packer.json)
--   [`alvistack/opensuse-leap-15.5`](https://hub.docker.com/r/alvistack/opensuse-leap-15.5)
-    -   [`packer/docker-leap-15.5/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.5/packer.json)
+- [`alvistack/opensuse-tumbleweed`](https://hub.docker.com/r/alvistack/opensuse-tumbleweed)
+  - [`packer/docker-tumbleweed/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-tumbleweed/packer.json)
+- [`alvistack/opensuse-leap-15.5`](https://hub.docker.com/r/alvistack/opensuse-leap-15.5)
+  - [`packer/docker-leap-15.5/packer.json`](https://github.com/alvistack/docker-opensuse/blob/master/packer/docker-leap-15.5/packer.json)
 
 ## Overview
 
@@ -38,11 +38,11 @@ running with openSUSE.
 Based on [Official openSUSE Leap Docker
 Image](https://hub.docker.com/r/opensuse/leap/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
--   Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
--   Handle `CMD` with SSHD
+- Packaging by Packer Docker builder and Ansible provisioner in single
+  layer
+- Handle `ENTRYPOINT` with
+  [catatonit](https://github.com/openSUSE/catatonit)
+- Handle `CMD` with SSHD
 
 ### Quick Start
 
@@ -97,12 +97,12 @@ latest packages provided by the base image project.
 
 ## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+- Code released under [Apache License 2.0](LICENSE)
+- Docs released under [CC BY
+  4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+- Wong Hoi Sing Edison
+  - <https://twitter.com/hswong3i>
+  - <https://github.com/hswong3i>
