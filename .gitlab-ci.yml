@@ -173,6 +173,45 @@ deploy:opensuse-tumbleweed-docker:
   needs:
     - test:opensuse-tumbleweed-docker
 
+build:opensuse-leap-15.6-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: $CI_PIPELINE_ID-opensuse-leap-15.6-docker
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: opensuse-leap-15.6
+    _PROVIDER: docker
+
+test:opensuse-leap-15.6-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: $CI_PIPELINE_ID-opensuse-leap-15.6-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: opensuse-leap-15.6
+    _PROVIDER: docker
+  needs:
+    - build:opensuse-leap-15.6-docker
+
+deploy:opensuse-leap-15.6-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: $CI_PIPELINE_ID-opensuse-leap-15.6-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: opensuse-leap-15.6
+    _PROVIDER: docker
+  needs:
+    - test:opensuse-leap-15.6-docker
+
 build:opensuse-leap-15.5-docker:
   <<: *job-packer-build
   stage: build
